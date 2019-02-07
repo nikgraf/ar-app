@@ -1,0 +1,57 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf build && rm -rf bundle",
+    "deploy": "viewar-cli deploy",
+    "build": "npm run clean && webpack -p --config ./config/webpack.config.js --mode production --env production",
+    "start": "npm run clean && webpack-dev-server --config ./config/webpack.config.js --open --mode development --env development_core",
+    "start:mock": "npm run clean && webpack-dev-server --config ./config/webpack.config.js --open --mode development --env development_mock",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --single-quote --trailing-comma es5 'src/**/*.{js,jsx,css,scss,md,json}' --write"
+  },
+  "author": "Karl Hofer <kh@viewar.com>",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.7",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "prettier": "^1.15.3",
+    "react-hot-loader": "^4.3.12",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.1.5"
+  },
+  "dependencies": {
+    "fastclick": "^1.0.6",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "styled-components": "^4.1.3",
+    "viewar-api": "^0.30.2",
+    "viewar-core": "^11.18.1"
+  }
+}
